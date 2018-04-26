@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>简单搜索栏</title>
+<script type="text/javascript" src="../study/js/jquery/2.0.0/jquery.min.js"></script>
+<link href="../study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+<script src="../study/js/bootstrap/3.3.6/bootstrap.min.js" type="text/javascript"></script>
+<style>
+	/*简单搜索栏*/
+	div.simpleSearchDiv{
+		background-color: #C40000;/*背景色天猫红*/
+		width:300px;/*宽度300px*/
+		margin:10px 20px 40px;/*外边距*/
+		padding:1px;/*内边距1px*/
+		height:40px;/*高度40px*/
+		display:block;/*用块状显示，只有使用块状显示的时候，上下外边距才会生效*/
+	}
+	/*输入框*/
+	div.simpleSearchDiv input{
+		width:225px;/*按钮宽度225px*/
+		border:1px solid transparent;/*边框透明不然会有阴影，看上去就不是嵌进去的*/
+		height:34px;/*高度34px*/
+		margin:2px;/*外边距2px，显得和外面的div有一定的距离*/
+		outline:none;/*去掉输入框轮廓，否则获取焦点的时候会发生颜色变化*/
+	}
+	/*搜天猫按钮*/
+	div.simpleSearchDiv button{
+		width:60px;/*按钮宽度60px*/
+		border:1px solid transparent;/*边框透明不然会有阴影，看上去就不是嵌进去的*/
+		background-color: #C40000;/*背景色天猫红，和div的背景色一样，按钮轮廓就会消失*/
+		color:white;/*文字颜色白色*/
+		font-size: 14px;/*文字大小*/
+		/*font-weight:bold;*//*首页的搜索框字体是粗体，这里没有使用*/
+	} 
+	/*文字所在div*/
+	div.searchBelow{
+		margin-top: 3px;/*下方关键字所在的div，上外边距*/
+		margin-left: -20px;/*左边距，结合超链的内边距，正好使得超链出现在开始的位置*/	
+	}
+	/*关键字之间的|*/
+	div.searchBelow span{
+		color:#999;
+	}
+	/*关键字超链*/
+	div.searchBelow a{
+		padding:0px 20px 0px 20px;/*超链左右的内边距*/
+		font-size:14px;/*超链文字大小*/
+	}
+	/*logo图片*/
+	img.simpleLogo{
+		position:absolute;
+		left:10px;
+		top:50px;
+		width:140px;
+	}
+	/*整个body*/
+	body{
+		font-size: 12px;/*把所有文字的大小调成12px,这是天猫默认的文字大小*/
+		font-family: Arial;
+	}
+	/*所有超链*/
+	a{
+		color:#999;/*所有的超链，都默认以灰色#999 形式表现出来*/
+	}
+	/*鼠标悬停*/
+	a:hover{
+		text-decoration: none;/*超链鼠标悬停的时候,没有下划线*/
+		color:#C40000;/*超链鼠标悬停的时候,使用天猫红显示*/
+	}
+	
+</style>
+</head>
+<body>
+	<div>
+		<a href="#nowhere">
+			<img src="../img/site/simpleLogo.png" class="simpleLogo" id="simpleLogo">
+		</a>
+		<div class="simpleSearchDiv pull-right">
+			<input type="text" name="keyword" placeholder="平衡车 原汁机">
+			<button type="button" class="searchButton">搜天猫</button>
+			<div class="searchBelow">
+				<span>
+					<a href="#nowhere">
+						冰箱
+					</a>
+						<span>|</span>
+				</span>
+				<span>
+					<a href="#nowhere">
+						空调
+					</a>
+						<span>|</span>
+				</span>				
+				<span>
+					<a href="#nowhere">
+						女表
+					</a>
+						<span>|</span>
+				</span>				
+				<span>
+					<a href="#nowhere">
+						男表
+					</a>
+				</span>				
+			</div>
+		</div>
+		<div style="clear:both"></div>
+	</div>
+</body>
+</html>
